@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <script src="assets/js/host.js"></script>
+
+</head>
+
+<body style="background:url('images/banner.jpg');background-repeat:no-repeat;background-size:cover">
+   
+<header id="header" class="alt">
+					<h1><img src="images/logo.png" alt="#" class="logo">店达管理系统 V1.0</h1>
+                    <div class="back"><a href="landing-page.html"> 返回</a></div>
+					<nav id="nav">
+						
+					</nav>
+				</header>
+    
+    <form id="form">
+        
+        <div class="register">
+            <div >
+                <p >添加新用户</p>
+                <input type="text" name="username" required id="nm" class="form-control" placeholder="用户名" autofocus>
+                <br>
+                <input type="password" name="password" required id="psd" class="form-control" placeholder="密码">
+                <br>
+                <input type="password" name="password-repeat" required id="PR" class="form-control" placeholder="确认密码">
+                <br>
+                <input type="checkbox" name="privilege"  value="people" class="form-control"><label>人效</label>
+                <input type="checkbox" name="privilege"  value="peoplero" class="form-control"><label for="">人效(只读)</label>
+                
+                <input type="checkbox" name="privilege"  value="price" class="form-control"><label for="">比价</label>
+                <input type="checkbox" name="privilege"  value="gmv" class="form-control"><label for="">gmv</label>
+                
+                <div id="message"></div>
+                <button class="login-up" id="register" type="submit">提交</button>
+            </div>
+        </div>
+    </form>
+
+    <footer id="footer">
+					<ul class="copyright">
+						<li>Copyright&copy; 2017. 沪ICP备15016578号  上海店达信息技术有限公司 All rights reserved</li><li>Design: <a href="">店达Brain</a></li>
+					</ul>
+				</footer>
+
+</body>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/register.js"></script>
+
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户信息</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/userchange.css" />
+    <script src="assets/js/host.js"></script>
+    
+</head>
+<body style="background:url('images/banner.jpg');background-repeat:no-repeat;background-size:cover">
+    <header id="header" class="alt">
+					<h1><img src="images/logo.png" alt="#" class="logo">店达管理系统 V1.0</h1>
+                    <div class="back"><a href="landing-page.html"> 返回</a></div>
+					<nav id="nav">
+						
+					</nav>
+	</header>
+    <main class="">
+        <form action="" >
+            <p>修改用户信息</p>
+            <label for="">用户名：</label>
+            <input  type="text" id="name" readonly="true" ><br>
+            <label for="">昵称：</label>
+            <input   id="nickname"  type="text" name="nickname" placeholder="不修改昵称可留空"><br>
+            <label for="">电话：</label>
+            <input  type="text" id="phone" name="telephone"  placeholder="不修改电话可留空"><br>
+            <label for="">Email：</label>
+            <input id="email" type="text" name="email"  placeholder="不修改email可留空"><br>
+             <label for="">旧密码：</label><input id="oldPassword" type="password" placeholder="修改必填内容" required><br>
+            <label for="">新密码：</label><label   for=""></label>
+            <input type="password" id="newPassword" placeholder="不修改密码可留空"><br>
+             <label for="">确认新密码：</label><input type="password" placeholder="不修改密码可留空"><br>
+              <div id="message"></div>
+             <button>保存修改</button>
+        </form>
+    </main>
+     <footer id="footer">
+					<ul class="copyright">
+						<li>Copyright&copy; 2017. 沪ICP备15016578号  上海店达信息技术有限公司 All rights reserved</li><li>Design: <a href="">店达Brain</a></li>
+					</ul>
+				</footer>
+</body>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/userchange.js"></script>
+</html>

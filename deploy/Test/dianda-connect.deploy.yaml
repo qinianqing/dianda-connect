@@ -1,0 +1,33 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: dianda-connect
+  name: dianda-connect
+  namespace: dianda-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: dianda-connect
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: dianda-connect
+    spec:
+      containers:
+      - image: uhub.service.ucloud.cn/dianda/dianda-connect:${version}
+        imagePullPolicy: IfNotPresent
+        name: dianda-connect
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      securityContext: {}
+      terminationGracePeriodSeconds: 30

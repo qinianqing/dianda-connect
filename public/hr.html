@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/hr.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.3.1/css/buttons.dataTables.min.css">
+
+    <title>招聘信息录入</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                <a class="navbar-brand" href="#">店达</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav" id="tit">
+                    <li class="active"><a href="#">招聘信息录入<span class="sr-only">(current)</span></a></li>
+                    <li><a href="#" id="li_t">招聘信息列表</a></li>
+                </ul>
+                <!--<form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>-->
+            </div>
+        </div>
+    </nav>
+    <ul id="con">
+
+        <li>
+            <main class="container">
+                <div id="text">
+                    <div class="page-header">
+                        <h2>录入面试人员信息<small>（粘贴）</small></h2>
+                    </div>
+                    <textarea id="post" class="form-control" rows="10" placeholder="">
+        </textarea>
+                    <div class="col-sm-offset-11 col-sm-10">
+                        <button type="button" id="push_ot" class="btn btn-info">解析</button>
+                    </div>
+                </div>
+                <div class="page-header">
+                    <h2 id="h2">面试人员基本信息补充<small style="color:red" id="message"></small> </h2>
+                </div>
+                <form class="form-horizontal" id="form">
+                    <div class="form-group">
+                        <label for="name" class="col-sm-1 control-label">姓名：</label>
+                        <div class="col-sm-4">
+                            <input type="text" id="name" name="name" required class="form-control" placeholder="name">
+                        </div>
+                        <label for="age" class="col-sm-2 control-label">年龄：</label>
+                        <div class="col-sm-4">
+                            <input type="text" id="age" name="age" class="form-control" placeholder="age">
+                        </div>
+                    </div>
+                   
+
+                    <div class="form-group">
+                        <label for="email" class="col-sm-1 control-label">邮箱：</label>
+                        <div class="col-sm-4">
+                            <input type="email" id="email" name="email" class="form-control" placeholder="email">
+                        </div>
+                        <label for="phone" class="col-sm-2 control-label">电话：</label>
+                        <div class="col-sm-4">
+                            <input type="text" id="phone" name="phone" required class="form-control" placeholder="phone">
+                        </div>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="data" class="col-sm-1 control-label">描述：</label>
+                        <div class="col-sm-4">
+                            <input type="text" id="data" name="data" class="form-control" placeholder="data">
+                        </div>
+                        <label for="interview_assessment" class="col-sm-2 control-label">职位：</label>
+                        <div class="col-sm-4">
+                            <input type="text" id="interview_assessment" name="interview_assessment" class="form-control" placeholder="interview_assessment">
+                        </div>
+                        
+                    </div>
+                     <div class="form-group">
+                        <label for="sex" class="col-sm-1 control-label">性别：</label>
+
+                        <div class="col-sm-4">
+                            <input type="text" id="sex" name="sex" class="form-control" placeholder="sex">
+                             <input type="radio" class="sexs" name="sexs" value="男">男
+                             <input type="radio" class="sexs" name="sexs" value="女">女
+                        </div>
+                        <label for="university" class="col-sm-2 control-label">学校：</label>
+                        <div class="col-sm-4">
+                            <input type="text" id="university" name="university" class="form-control" placeholder="university">
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="education" class="col-sm-1 control-label">学历：</label>
+                        <div class="col-sm-4">
+                            <input type="text" id="education" name="education" class="form-control" placeholder="education">
+                            <input type="radio" class="edu" name="edu"  value="博士">博士
+                            <input type="radio" class="edu" name="edu" value="硕士">硕士
+                            <input type="radio" class="edu" name="edu" value="本科">本科
+                            <input type="radio" class="edu" name="edu" value="大专">大专
+                            <input type="radio" class="education" name="educ"  value="211">211
+                            <input type="radio" class="education" name="educ" value="985">985
+                        </div>
+
+                        <label for="year" class="col-sm-2 control-label">工作经验：</label>
+                        <div class="col-sm-4">
+                            <input type="text" id="year" name="year" class="form-control" placeholder="year">
+                            <input type="radio" class="year" name="ye" value="无">无
+                            <input type="radio" class="year" name="ye" value="1年">1年
+                            <input type="radio" class="year" name="ye" value="2年">2年
+                            <input type="radio" class="year" name="ye" value="3年">3年
+                            <input type="radio" class="year" name="ye" value="4年">4年
+                            <input type="radio" class="year" name="ye" value="5年">5年
+                            <input type="radio" class="year" name="ye" value="5年以上">5年以上
+                            <input type="radio" class="year" name="ye" value="10年以上">10年以上
+                        </div>
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label for="evaluate" class="col-sm-1 control-label">评价：</label>
+                        <div class="col-sm-4">
+                            <input type="text" id="evaluate" name="evaluate" class="form-control" placeholder="evaluate">
+                            <input type="radio" class="eva" name="eva" value="1分">1分
+                            <input type="radio" class="eva" name="eva" value="2分">2分
+                            <input type="radio" class="eva" name="eva" value="3分">3分
+                            <input type="radio" class="eva" name="eva" value="4分">4分
+                            <input type="radio" class="eva" name="eva" value="5分">5分
+                            <input type="radio" class="eva" name="eva" value="6分">6分
+                            <input type="radio" class="eva" name="eva" value="7分">7分
+                            <input type="radio" class="eva" name="eva" value="8分">8分
+                            <input type="radio" class="eva" name="eva" value="9分">9分
+                            <input type="radio" class="eva" name="eva" value="10分">10分
+                        </div>
+                         <label for="source" class="col-sm-2 control-label">来源：</label>
+                        <div class="col-sm-4">
+                            <input type="text" id="source" name="source" class="form-control" placeholder="source">
+                            <input type="radio" class="sou" name="sou"  value="拉勾网">拉勾
+                            <input type="radio" class="sou" name="sou" value="猎聘网">猎聘
+                            <input type="radio" class="sou" name="sou" value="boss直聘">boss
+                            <input type="radio" class="sou" name="sou" value="51job">51job
+                            <input type="radio" class="sou" name="sou"  value="智联招聘">智联
+                            <input type="radio" class="sou" name="sou" value="58同城">58同城
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <label for="statu" class="col-sm-1 control-label">流程状态：</label>
+                        <div class="col-sm-4">
+                            <input type="text" id="statu" name="statu" class="form-control" placeholder="status">
+                            <input type="radio" class="sta" name="sta" value="邀请面试">邀请面试
+                            <input type="radio" class="sta" name="sta" value="已约面试">已约面试
+                            <input type="radio" class="sta" name="sta" value="面试通过">面试通过
+                            <input type="radio" class="sta" name="sta" value="面试不通过">面试不通过
+                            <input type="radio" class="sta" name="sta" value="备选">备选
+                            <input type="radio" class="sta" name="sta" value="不建议录用">不建议录用
+                            <input type="radio" class="sta" name="sta" value="入职">入职
+                            <input type="radio" class="sta" name="sta" value="放弃入职">放弃入职
+                        </div>
+                         <label for="interview_times" class="col-sm-2 control-label">约面试时间：</label>
+                        <div class="col-sm-4">
+                            <input type="text" id="interview_times" name="interview_times" class="form-control" placeholder="interview_times">
+                        </div>    
+                    </div>
+                <div class="form-group">    
+                    <label for="time" class="col-sm-1 control-label">最后修改日期：</label>
+                        <div class="col-sm-4">
+                            <input type="text" id="time" name="time" class="form-control" placeholder="time">
+                        </div>
+                     </div>
+                    
+                    <div class="form-group">
+                        <div class="col-sm-offset-10 col-sm-10">
+                            <button type="submit" id="submit" class="btn btn-info ">保存</button>
+                            <button type="submit" id="changes" class="btn btn-info">修改</button>
+                        </div>
+                    </div>
+                </form>
+            </main>
+        </li>
+        <li class="container" id="li_two">
+            <table id="example" class="display" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+
+                    </tr>
+                </thead>
+            </table>
+        </li>
+        <!--<li>内容333</li>-->
+    </ul>
+    <footer id="footer">
+        <p>Copyright&copy; 2017. 沪ICP备15016578号 上海店达信息技术有限公司 All rights reserved Design: <a href="">店达Brain</a></p>
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.js"></script>
+    <script src="assets/js/time.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/hr.js"></script>
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js"></script>
+    <script src="assets/js/datatable.js"></script>
+</body>
+
+</html>
